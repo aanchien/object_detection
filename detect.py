@@ -82,6 +82,10 @@ def hello_world():
 def image_classifier():
    data = request.get_json()
    image = Image.open(io.BytesIO(base64.b64decode(data['b64'])))
+
+   if not image.mode == 'RGB':
+      image = image.convert('RGB')
+
    image_np = load_image_into_numpy_array(image)
    image_np_expanded = np.expand_dims(image_np, axis=0)
    output_dict = m.predict(image_np_expanded)
