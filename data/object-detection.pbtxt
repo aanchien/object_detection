@@ -1,14 +1,14 @@
 item {
-	id: 0
+	id: 1
 	name: 'barcode'
 }
 
 item {
-	id: 1
+	id: 2
 	name: 'pdf417'
 }
 
 item {
-	id: 2
+	id: 3
 	name: 'qr'
 }	

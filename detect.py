@@ -105,6 +105,7 @@ def image_classifier():
       if (int(output_dict['detection_scores'][i]*100))>49 :
          d = {}
          d['coordinates'] = ', '.join(str(v) for v in output_dict['detection_boxes'][i])
+         # (minY, minX, maxY, maxX)
          d['image_type'] = int(output_dict['detection_classes'][i])
          d['accuracy'] = int(output_dict['detection_scores'][i]*100)
          lst.append(d)
